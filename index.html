@@ -104,6 +104,9 @@
   .ed-price{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:#fff;margin-bottom:1rem}
   .ed-price .was{font-family:var(--sans);font-size:.85rem;font-weight:500;color:rgba(255,255,255,.6);text-decoration:line-through;margin-left:.5rem}
   .ed-note{text-align:center;margin:2rem auto 0;color:rgba(255,255,255,.7);font-size:.92rem;max-width:560px}
+  .how-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .how-grid .card a{color:var(--navy);font-weight:600}
+  .how-note{max-width:640px;margin:2.2rem auto 0;text-align:center;color:var(--muted);font-size:.95rem}
 
   /* Verse */
   .verse{background:var(--paper);text-align:center}
@@ -258,6 +261,21 @@
       </div>
     </div>
     <p class="ed-note reveal">Instant delivery — your fillable PDF download is ready the moment checkout completes. Secure payment by Stripe.</p>
+  </section>
+
+  <!-- How to fill it in -->
+  <section id="how">
+    <div class="wrap center reveal">
+      <span class="kicker">Simple to Complete</span>
+      <h2>Filling it in is the easy part</h2>
+      <p class="lead">Your Infinity Map arrives as a fillable PDF the moment you check out. Complete it whichever way feels most natural.</p>
+    </div>
+    <div class="wrap inside-grid how-grid">
+      <div class="card reveal"><div class="ico">💻</div><h3>Type it on your computer</h3><p>Open the PDF in the free <a href="https://get.adobe.com/reader/" rel="noopener">Adobe Acrobat Reader</a> (or Preview on a Mac), click any field to type, and save as you go. No account, no internet needed.</p></div>
+      <div class="card reveal"><div class="ico">🖨️</div><h3>Print it and write by hand</h3><p>Print the whole workbook and fill it in with a pen — many families love a handwritten copy that becomes a keepsake in a loved one's own writing.</p></div>
+      <div class="card reveal"><div class="ico">📍</div><h3>Store it &amp; tell someone</h3><p>Keep the finished Map with your important documents, and tell at least one family member exactly where it is. A plan no one can find helps no one.</p></div>
+    </div>
+    <p class="how-note reveal">One more thing: your completed Infinity Map holds sensitive information — keep it on your own computer or on paper. Please don't email the finished copy to anyone.</p>
   </section>
 
   <!-- Verse -->
