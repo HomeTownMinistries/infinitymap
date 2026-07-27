@@ -108,6 +108,23 @@
   .how-grid .card a{color:var(--navy);font-weight:600}
   .how-note{max-width:640px;margin:2.2rem auto 0;text-align:center;color:var(--muted);font-size:.95rem}
 
+  /* Free guide */
+  .freeguide{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .fg-form{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+  .fg-email{flex:1 1 280px;max-width:360px;padding:.85rem 1.2rem;border-radius:999px;border:1.5px solid var(--line);font-family:var(--sans);font-size:1rem;background:var(--cream);color:var(--ink)}
+  .fg-email:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+  .fg-btn{border:none;cursor:pointer;font-family:var(--sans)}
+  .fg-note{margin-top:1.2rem;font-size:.85rem;color:var(--muted)}
+  .hp{display:none}
+
+  /* FAQ */
+  .faq{background:var(--cream)}
+  .faq-list{max-width:760px;margin-top:2.4rem}
+  .faq-list details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.4rem;margin-bottom:.8rem}
+  .faq-list summary{cursor:pointer;font-weight:600;color:var(--navy);font-size:1.02rem;list-style-position:outside}
+  .faq-list details p{margin-top:.8rem;color:var(--muted);font-size:.95rem}
+  .faq-list details a{color:var(--navy);font-weight:600}
+
   /* Verse */
   .verse{background:var(--paper);text-align:center}
   .verse blockquote{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.1rem);font-style:italic;color:var(--navy);max-width:760px;margin:0 auto;line-height:1.4}
@@ -129,6 +146,7 @@
 
   footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.2rem 1.25rem;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.88rem}
   footer .f-motto{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.05rem;margin-bottom:.6rem}
+  footer .f-disclaimer{margin-top:.9rem;font-size:.78rem;color:rgba(255,255,255,.45);max-width:640px;margin-left:auto;margin-right:auto}
   footer a{color:rgba(255,255,255,.85);text-decoration:none}
   footer a:hover{text-decoration:underline}
 
@@ -287,6 +305,22 @@
     </div>
   </section>
 
+  <!-- Free guide -->
+  <section class="freeguide" id="free-guide">
+    <div class="wrap center reveal">
+      <span class="kicker">Free Resource</span>
+      <h2>Not sure how to bring it up? Start here.</h2>
+      <p class="lead">Get our free one-page guide — <em>Start the Conversation: five questions to ask your parents this Sunday</em>. The gentle way to open the door before any planning begins.</p>
+      <form class="fg-form" name="free-guide" method="POST" action="/free-guide.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="free-guide">
+        <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <input class="fg-email" type="email" name="email" placeholder="Your email address" required aria-label="Your email address">
+        <button class="btn btn-navy fg-btn" type="submit">Send Me the Free Guide</button>
+      </form>
+      <p class="fg-note">Instant download. We'll never share your email — that's a promise from a ministry, not a marketing department.</p>
+    </div>
+  </section>
+
   <!-- About -->
   <section id="about">
     <div class="wrap about-grid">
@@ -298,6 +332,36 @@
         <p class="motto">3 Crosses. 2 Choices. 1 Savior.</p>
       </div>
       <img class="reveal" src="assets/logo.png" alt="The Infinity Map logo — an infinity symbol with a red heart">
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap center reveal">
+      <span class="kicker">Common Questions</span>
+      <h2>Good questions, honest answers</h2>
+    </div>
+    <div class="wrap faq-list">
+      <details class="reveal">
+        <summary>Is the Infinity Map a will or a legal document?</summary>
+        <p>No. The Infinity Map is a planning workbook — it organizes your information, wishes, and story in one place so your family isn't left searching. It is not legal advice and doesn't replace a will, living will, or power of attorney. We encourage you to bring your completed Map to an attorney; it makes preparing those legal documents faster and easier.</p>
+      </details>
+      <details class="reveal">
+        <summary>How do I receive my Infinity Map?</summary>
+        <p>Instantly. The moment your checkout completes, you land on a download page with your fillable PDF. If you ever misplace it, email us and we'll send it to you directly.</p>
+      </details>
+      <details class="reveal">
+        <summary>Can my spouse and I both use one purchase?</summary>
+        <p>Yes — your purchase covers your household. Save or print a copy for each family member; every person should complete their own Map.</p>
+      </details>
+      <details class="reveal">
+        <summary>Do you see what I fill in?</summary>
+        <p>Never. The PDF lives on your computer or on paper — nothing you write in it is ever sent to us or stored online. Your information stays entirely in your hands.</p>
+      </details>
+      <details class="reveal">
+        <summary>Something went wrong with my order — what do I do?</summary>
+        <p>Email <a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a> and we'll make it right. You'll get a real reply from a real person.</p>
+      </details>
     </div>
   </section>
 
@@ -317,6 +381,7 @@
 <footer>
   <div class="f-motto">“Because love plans ahead.”</div>
   <div>© <span id="yr">2026</span> HomeTown Ministries International · <a href="https://hometownministries.com">hometownministries.com</a> · <a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a></div>
+  <div class="f-disclaimer">The Infinity Map is a planning workbook, not legal, medical, or financial advice. Please consult an attorney for wills, living wills, and powers of attorney.</div>
 </footer>
 
 <script>
