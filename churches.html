@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Infinity Map for Churches — End-of-Life Planning Workshop</title>
+<meta name="description" content="Bring the Infinity Map workshop to your congregation: one Infinity Map per household, a 12-page Facilitator Guide, and a complete 5- or 8-week curriculum with prayers, scripture, and discussion prompts.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#00122a;--navy-2:#0a2342;--ink:#1c2733;--cream:#faf7f2;--paper:#ffffff;
+    --gold:#c9a227;--red:#e02128;--muted:#5b6b7c;--line:#e7e0d4;
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;font-size:16.5px}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  header{position:sticky;top:0;z-index:50;background:rgba(0,18,42,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav{max-width:1120px;margin:0 auto;padding:.7rem 1.25rem;display:flex;align-items:center;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:#fff}
+  .brand img{width:40px;height:40px;border-radius:9px}
+  .brand span{font-family:var(--serif);font-size:1.28rem;font-weight:600;letter-spacing:.02em}
+  nav.links{margin-left:auto;display:flex;align-items:center;gap:1.6rem;font-size:.92rem}
+  nav.links a{color:rgba(255,255,255,.82);text-decoration:none;font-weight:500;transition:color .2s}
+  nav.links a:hover{color:#fff}
+  .btn{display:inline-block;padding:.72rem 1.5rem;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease,background .2s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 4px 14px rgba(201,162,39,.35)}
+  .btn-gold:hover{background:#d9b23a}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+  .btn-ghost:hover{border-color:#fff}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-2)}
+  .nav .btn{padding:.5rem 1.15rem;font-size:.88rem}
+  @media(max-width:760px){nav.links a.hide-m{display:none}}
+
+  .hero{background:radial-gradient(1200px 600px at 50% -10%,#123256 0%,var(--navy) 55%),var(--navy);color:#fff;text-align:center;padding:4rem 1.25rem 4.5rem}
+  .hero img.mark{width:min(280px,60vw);margin:0 auto 1.6rem;filter:drop-shadow(0 12px 40px rgba(0,0,0,.45))}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.12;max-width:820px;margin:0 auto}
+  .hero .tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.55rem);color:var(--gold);margin:.9rem 0 1.1rem}
+  .hero p.sub{max-width:660px;margin:0 auto 2.2rem;color:rgba(255,255,255,.85);font-size:1.06rem}
+  .hero .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+  section{padding:4.2rem 1.25rem}
+  .wrap{max-width:1120px;margin:0 auto}
+  .kicker{font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--navy);margin:.4rem 0 1rem;line-height:1.15}
+  .lead{max-width:700px;color:var(--muted);font-size:1.04rem}
+  .center{text-align:center}
+  .center .lead{margin:0 auto}
+
+  .inc{background:var(--paper)}
+  .inc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem;margin-top:2.6rem}
+  .card{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:1.7rem 1.5rem}
+  .card .ico{width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:.9rem}
+  .card h3{font-size:1.06rem;color:var(--navy);margin-bottom:.4rem}
+  .card p{font-size:.93rem;color:var(--muted)}
+
+  .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem;margin-top:2.6rem}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.7rem 1.5rem}
+  .step .num{font-family:var(--serif);font-size:2.1rem;font-weight:700;color:var(--gold);line-height:1}
+  .step h3{font-size:1.05rem;color:var(--navy);margin:.6rem 0 .4rem}
+  .step p{font-size:.93rem;color:var(--muted)}
+
+  .pricing{background:var(--navy);color:#fff}
+  .pricing h2{color:#fff}
+  .pricing .lead{color:rgba(255,255,255,.8)}
+  .pr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem;margin-top:2.8rem}
+  .pr-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:1.9rem 1.6rem;display:flex;flex-direction:column;text-align:center}
+  .pr-card.feature{background:rgba(201,162,39,.1);border-color:rgba(201,162,39,.5)}
+  .pr-card h3{font-family:var(--serif);font-size:1.45rem;font-weight:600}
+  .pr-card .size{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:.15in 0 .9rem;margin-top:.2rem}
+  .pr-card .price{font-family:var(--serif);font-size:2.3rem;font-weight:700;margin-bottom:1rem}
+  .pr-card p{font-size:.9rem;color:rgba(255,255,255,.8);flex:1;margin-bottom:1.3rem}
+  .pr-card .btn{font-size:.9rem}
+  .pr-note{text-align:center;margin:2.2rem auto 0;color:rgba(255,255,255,.7);font-size:.92rem;max-width:620px}
+  .pr-note a{color:var(--gold)}
+
+  .kit{background:var(--paper);text-align:center}
+  .kit .lead{margin:0 auto 1.8rem}
+
+  .contact{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;text-align:center}
+  .contact h2{color:#fff}
+  .contact .lead{color:rgba(255,255,255,.82);margin:0 auto 2rem}
+  .contact .email a{color:var(--gold);text-decoration:none;font-weight:600}
+  .contact .email{font-size:1rem;color:rgba(255,255,255,.75);margin-top:1.4rem}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.2rem 1.25rem;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.88rem}
+  footer .f-motto{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.05rem;margin-bottom:.6rem}
+  footer a{color:rgba(255,255,255,.85);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="/">
+      <img src="assets/favicon.png" alt="Infinity Map logo">
+      <span>The Infinity Map</span>
+    </a>
+    <nav class="links">
+      <a href="/" class="hide-m">Home</a>
+      <a href="#included" class="hide-m">What's Included</a>
+      <a href="#pricing" class="hide-m">Packages</a>
+      <a href="#pricing" class="btn btn-gold">Get the Workshop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <img class="mark" src="assets/mark.png" alt="Infinity Map">
+    <h1>Bring the Infinity Map workshop to your congregation</h1>
+    <p class="tag">“Because love plans ahead.”</p>
+    <p class="sub">A complete end-of-life planning workshop for churches of every size — walking your church family through loving preparation together, with scripture at the center and nobody left to face it alone.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#pricing">See the Packages</a>
+      <a class="btn btn-ghost" href="files/Church_Promo_Kit.pdf" download>Download the Free Promo Kit</a>
+    </div>
+  </div>
+
+  <section class="inc" id="included">
+    <div class="wrap center">
+      <span class="kicker">What's Included</span>
+      <h2>Everything you need to lead it well</h2>
+      <p class="lead">Every package includes the same complete materials — the only difference is the size of your congregation.</p>
+    </div>
+    <div class="wrap inc-grid">
+      <div class="card"><div class="ico">📖</div><h3>One Infinity Map per household</h3><p>Every family in your congregation receives the complete life &amp; legacy planning workbook to fill in at home as the workshop unfolds.</p></div>
+      <div class="card"><div class="ico">🧭</div><h3>12-page Facilitator Guide</h3><p>A step-by-step leader's guide, so any pastor, elder, or ministry leader can run the workshop with confidence — no special training needed.</p></div>
+      <div class="card"><div class="ico">✝️</div><h3>5- or 8-week curriculum</h3><p>A complete weekly plan with prayers, scripture, and discussion prompts — choose the pace that fits your church calendar.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap center">
+      <span class="kicker">How It Works</span>
+      <h2>From decision to done in one season</h2>
+    </div>
+    <div class="wrap steps-grid">
+      <div class="step"><div class="num">1</div><h3>Choose your package</h3><p>Pick the size that fits your congregation below — checkout takes two minutes.</p></div>
+      <div class="step"><div class="num">2</div><h3>Receive your materials</h3><p>Your workbook download is instant, and we'll follow up with your Facilitator Guide and full curriculum.</p></div>
+      <div class="step"><div class="num">3</div><h3>Announce a Legacy Sunday</h3><p>Use the free promo kit — pulpit script and bulletin insert included — to invite the congregation.</p></div>
+      <div class="step"><div class="num">4</div><h3>Walk through it together</h3><p>Meet weekly for 5 or 8 weeks. Families finish with a completed plan — and peace of mind.</p></div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="wrap center">
+      <span class="kicker">Packages</span>
+      <h2>One package, sized for your church</h2>
+      <p class="lead">Bulk pricing saves your church over 70% per person compared to individual copies.</p>
+    </div>
+    <div class="wrap pr-grid">
+      <div class="pr-card">
+        <h3>Small Church</h3>
+        <div class="size">Up to 50 people</div>
+        <div class="price">$299</div>
+        <p>Everything your congregation needs to walk through loving preparation together.</p>
+        <a class="btn btn-ghost" href="https://buy.stripe.com/4gM6oJ1Ny5WK1s6b6fcZa05">Get the Workshop</a>
+      </div>
+      <div class="pr-card feature">
+        <h3>Medium Church</h3>
+        <div class="size">Up to 100 people</div>
+        <div class="price">$499</div>
+        <p>Best value for mid-size congregations.</p>
+        <a class="btn btn-gold" href="https://buy.stripe.com/aFaeVf9g084S7Qu1vFcZa06">Get the Workshop</a>
+      </div>
+      <div class="pr-card">
+        <h3>Large Church</h3>
+        <div class="size">Up to 200 people</div>
+        <div class="price">$799.99</div>
+        <p>Serve your whole church family with one simple package.</p>
+        <a class="btn btn-ghost" href="https://buy.stripe.com/dRmeVf77S5WK2wab6fcZa08">Get the Workshop</a>
+      </div>
+      <div class="pr-card">
+        <h3>Mega Church</h3>
+        <div class="size">Unlimited participants</div>
+        <div class="price">$999</div>
+        <p>One price, no limits — unlimited households, any size church.</p>
+        <a class="btn btn-ghost" href="https://buy.stripe.com/4gM14pak42Ky0o24HRcZa07">Get the Workshop</a>
+      </div>
+    </div>
+    <p class="pr-note">Not sure which package fits, or want to talk it through first? Email <a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a> — we're glad to help you choose.</p>
+  </section>
+
+  <section class="kit">
+    <div class="wrap center">
+      <span class="kicker">Free for Every Church</span>
+      <h2>The Legacy Sunday promo kit</h2>
+      <p class="lead">A pulpit announcement script, bulletin insert copy, and a coordinator's checklist — everything you need to invite your congregation, free to download whether you've purchased or not.</p>
+      <a class="btn btn-navy" href="files/Church_Promo_Kit.pdf" download>Download the Promo Kit (PDF)</a>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <span class="kicker">Questions?</span>
+      <h2>We'd love to help your church prepare well</h2>
+      <p class="lead">Every congregation is different. If you'd like to talk through how the workshop could work in your church, reach out — you'll get a real reply from a real person.</p>
+      <a class="btn btn-gold" href="mailto:michael@hometownministries.com?subject=Infinity%20Map%20Church%20Workshop">Email Us</a>
+      <p class="email"><a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="f-motto">“Because love plans ahead.”</div>
+  <div>© <span id="yr">2026</span> HomeTown Ministries International · <a href="/">InfinityMap.org</a> · <a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a></div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
