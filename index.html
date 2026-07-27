@@ -110,10 +110,13 @@
 
   /* Free guide */
   .freeguide{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .fg-form{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:2rem}
+  .fg-download{margin-top:1.8rem}
+  .fg-form{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem}
+  .fg-btn-ghost{border:1.5px solid var(--navy);color:var(--navy);background:transparent;cursor:pointer;font-family:var(--sans)}
+  .fg-btn-ghost:hover{background:var(--navy);color:#fff}
   .fg-email{flex:1 1 280px;max-width:360px;padding:.85rem 1.2rem;border-radius:999px;border:1.5px solid var(--line);font-family:var(--sans);font-size:1rem;background:var(--cream);color:var(--ink)}
   .fg-email:focus{outline:2px solid var(--gold);border-color:var(--gold)}
-  .fg-btn{border:none;cursor:pointer;font-family:var(--sans)}
+  .fg-btn{cursor:pointer;font-family:var(--sans)}
   .fg-note{margin-top:1.2rem;font-size:.85rem;color:var(--muted)}
   .hp{display:none}
 
@@ -310,14 +313,15 @@
     <div class="wrap center reveal">
       <span class="kicker">Free Resource</span>
       <h2>Not sure how to bring it up? Start here.</h2>
-      <p class="lead">Get our free one-page guide — <em>Start the Conversation: five questions to ask your parents this Sunday</em>. The gentle way to open the door before any planning begins.</p>
+      <p class="lead">Our free one-page guide — <em>Start the Conversation: five questions to ask your parents this Sunday</em> — is the gentle way to open the door before any planning begins. No signup, no catch. Print it, share it, bring it to your church.</p>
+      <a class="btn btn-navy fg-download" href="files/Start_the_Conversation.pdf" download>Download the Free Guide (PDF)</a>
       <form class="fg-form" name="free-guide" method="POST" action="/free-guide.html" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="free-guide">
         <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
-        <input class="fg-email" type="email" name="email" placeholder="Your email address" required aria-label="Your email address">
-        <button class="btn btn-navy fg-btn" type="submit">Send Me the Free Guide</button>
+        <input class="fg-email" type="email" name="email" placeholder="Your email address" aria-label="Your email address" required>
+        <button class="btn fg-btn fg-btn-ghost" type="submit">Keep Me Posted</button>
       </form>
-      <p class="fg-note">Instant download. We'll never share your email — that's a promise from a ministry, not a marketing department.</p>
+      <p class="fg-note">Want future resources like this? Leave your email — optional, and we'll never share it. That's a promise from a ministry, not a marketing department.</p>
     </div>
   </section>
 
