@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Infinity Map for Funeral Homes — Pre-Need Completion Program</title>
+<meta name="description" content="Give every pre-need client the Infinity Map: all 33 death certificate fields and service wishes on file years ahead, a warmer close for your counselors, and a certificate moment families remember. Bulk licensing for funeral homes.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#00122a;--navy-2:#0a2342;--ink:#1c2733;--cream:#faf7f2;--paper:#ffffff;
+    --gold:#c9a227;--muted:#5b6b7c;--line:#e7e0d4;
+    --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;font-size:16.5px}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  header{position:sticky;top:0;z-index:50;background:rgba(0,18,42,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav{max-width:1120px;margin:0 auto;padding:.7rem 1.25rem;display:flex;align-items:center;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:#fff}
+  .brand img{width:40px;height:40px;border-radius:9px}
+  .brand span{font-family:var(--serif);font-size:1.28rem;font-weight:600}
+  nav.links{margin-left:auto;display:flex;align-items:center;gap:1.6rem;font-size:.92rem}
+  nav.links a{color:rgba(255,255,255,.82);text-decoration:none;font-weight:500}
+  nav.links a:hover{color:#fff}
+  .btn{display:inline-block;padding:.72rem 1.5rem;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 4px 14px rgba(201,162,39,.35)}
+  .btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+  .btn-navy{background:var(--navy);color:#fff}
+  .nav .btn{padding:.5rem 1.15rem;font-size:.88rem}
+  @media(max-width:760px){nav.links a.hide-m{display:none}}
+
+  .hero{background:radial-gradient(1200px 600px at 50% -10%,#123256 0%,var(--navy) 55%),var(--navy);color:#fff;text-align:center;padding:4rem 1.25rem 4.5rem}
+  .hero img.mark{width:min(260px,55vw);margin:0 auto 1.5rem;filter:drop-shadow(0 12px 40px rgba(0,0,0,.45))}
+  .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4.8vw,3.3rem);line-height:1.12;max-width:860px;margin:0 auto}
+  .hero .tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.5rem);color:var(--gold);margin:.9rem 0 1.1rem}
+  .hero p.sub{max-width:680px;margin:0 auto 2.2rem;color:rgba(255,255,255,.85);font-size:1.05rem}
+  .hero .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+  section{padding:4.2rem 1.25rem}
+  .wrap{max-width:1120px;margin:0 auto}
+  .kicker{font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--navy);margin:.4rem 0 1rem;line-height:1.15}
+  .lead{max-width:720px;color:var(--muted);font-size:1.04rem}
+  .center{text-align:center}
+  .center .lead{margin:0 auto}
+
+  .value{background:var(--paper)}
+  .val-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.3rem;margin-top:2.6rem}
+  .card{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:1.7rem 1.5rem}
+  .card .ico{width:44px;height:44px;border-radius:12px;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:.9rem}
+  .card h3{font-size:1.06rem;color:var(--navy);margin-bottom:.4rem}
+  .card p{font-size:.93rem;color:var(--muted)}
+
+  .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem;margin-top:2.6rem}
+  .step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.3rem}
+  .step .num{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--gold);line-height:1}
+  .step h3{font-size:1rem;color:var(--navy);margin:.55rem 0 .35rem}
+  .step p{font-size:.9rem;color:var(--muted)}
+
+  .pricing{background:var(--navy);color:#fff}
+  .pricing h2{color:#fff}
+  .pricing .lead{color:rgba(255,255,255,.8)}
+  .pr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.3rem;margin-top:2.8rem;max-width:980px;margin-left:auto;margin-right:auto}
+  .pr-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:1.9rem 1.6rem;display:flex;flex-direction:column;text-align:center}
+  .pr-card.feature{background:rgba(201,162,39,.1);border-color:rgba(201,162,39,.5)}
+  .pr-card h3{font-family:var(--serif);font-size:1.45rem;font-weight:600}
+  .pr-card .size{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:.2rem 0 .9rem}
+  .pr-card .price{font-family:var(--serif);font-size:2.3rem;font-weight:700;margin-bottom:.2rem}
+  .pr-card .per{font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:1rem}
+  .pr-card p{font-size:.9rem;color:rgba(255,255,255,.8);flex:1;margin-bottom:1.3rem}
+  .pr-card .btn{font-size:.9rem}
+  .cobrand{max-width:980px;margin:1.6rem auto 0;background:rgba(201,162,39,.1);border:1px solid rgba(201,162,39,.5);border-radius:18px;padding:1.6rem 1.8rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+  .cobrand .txt{flex:1;min-width:260px}
+  .cobrand h3{font-family:var(--serif);font-size:1.4rem;font-weight:600}
+  .cobrand p{font-size:.92rem;color:rgba(255,255,255,.8);margin-top:.3rem}
+  .pr-note{text-align:center;margin:2.2rem auto 0;color:rgba(255,255,255,.7);font-size:.92rem;max-width:640px}
+  .pr-note a{color:var(--gold)}
+
+  .kit{background:var(--paper);text-align:center}
+  .kit .lead{margin:0 auto 1.8rem}
+
+  .contact{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;text-align:center}
+  .contact h2{color:#fff}
+  .contact .lead{color:rgba(255,255,255,.82);margin:0 auto 2rem}
+  .contact .email{font-size:1rem;color:rgba(255,255,255,.75);margin-top:1.4rem}
+  .contact .email a{color:var(--gold);text-decoration:none;font-weight:600}
+
+  footer{background:var(--navy);color:rgba(255,255,255,.65);padding:2.2rem 1.25rem;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.88rem}
+  footer .f-motto{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.05rem;margin-bottom:.6rem}
+  footer a{color:rgba(255,255,255,.85);text-decoration:none}
+  footer .f-disclaimer{margin-top:.9rem;font-size:.78rem;color:rgba(255,255,255,.45);max-width:720px;margin-left:auto;margin-right:auto}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="/">
+      <img src="assets/favicon.png" alt="Infinity Map logo">
+      <span>The Infinity Map</span>
+    </a>
+    <nav class="links">
+      <a href="/" class="hide-m">Home</a>
+      <a href="#how" class="hide-m">How It Works</a>
+      <a href="#pricing" class="hide-m">Pricing</a>
+      <a href="#pricing" class="btn btn-gold">Start the Program</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <img class="mark" src="assets/mark.png" alt="Infinity Map">
+    <h1>Complete the pre-need.<br>Win the family.</h1>
+    <p class="tag">The Pre-Need Completion Program for Funeral Homes</p>
+    <p class="sub">Your pre-need clients chose their arrangements. The Infinity Map completes the plan — putting all 33 death certificate fields and their service wishes on file years ahead, and giving your counselors the warmest close in the industry.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#pricing">See Bulk Pricing</a>
+      <a class="btn btn-ghost" href="files/Funeral_Home_Sales_Sheet.pdf" download>Download the One-Pager</a>
+    </div>
+  </div>
+
+  <section class="value">
+    <div class="wrap center">
+      <span class="kicker">Why Funeral Homes Offer It</span>
+      <h2>Operational value your staff will feel at the time of need</h2>
+    </div>
+    <div class="wrap val-grid">
+      <div class="card"><div class="ico">📋</div><h3>Death certificate data, collected early</h3><p>The workbook captures all 33 required fields — completed calmly at the client's kitchen table and returned to your file, instead of extracted from a grieving spouse at 9 a.m.</p></div>
+      <div class="card"><div class="ico">🕊️</div><h3>Service wishes on file</h3><p>The client's funeral preferences come back alongside their pre-need contract — so what they wanted is never a guess, even decades later.</p></div>
+      <div class="card"><div class="ico">🤝</div><h3>A warmer close for your counselors</h3><p>Ending the arrangement conference with a gift — "this is for your family's story" — reframes the whole pre-need experience.</p></div>
+      <div class="card"><div class="ico">🔄</div><h3>A built-in second touchpoint</h3><p>The 30-day return of the Funeral Home Copy gives every client a natural, non-sales reason to hear from your firm again.</p></div>
+      <div class="card"><div class="ico">🏅</div><h3>The certificate moment</h3><p>When the pages come back, you present a Certificate of Completion: "Everything is in place." Families frame it — and talk about it.</p></div>
+      <div class="card"><div class="ico">🔒</div><h3>Privacy by design</h3><p>Only two sections ever return to your firm. Finances, letters, and life story stay with the family — you never hold data you shouldn't.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap center">
+      <span class="kicker">How It Works</span>
+      <h2>Five steps, fully scripted for your counselors</h2>
+      <p class="lead">Your package includes a Director's Program Guide with word-for-word presentation and follow-up scripts, a customer instruction insert for every workbook, and printable certificates.</p>
+    </div>
+    <div class="wrap steps-grid">
+      <div class="step"><div class="num">1</div><h3>Gift</h3><p>Presented at the close of every pre-need arrangement.</p></div>
+      <div class="step"><div class="num">2</div><h3>Complete</h3><p>The client fills it in at home — 30-day target.</p></div>
+      <div class="step"><div class="num">3</div><h3>Return</h3><p>Two sections come back: vital information and service wishes.</p></div>
+      <div class="step"><div class="num">4</div><h3>File</h3><p>Stored with the pre-need contract, ready for the time of need.</p></div>
+      <div class="step"><div class="num">5</div><h3>Certify</h3><p>The Certificate of Completion — a moment families remember.</p></div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="wrap center">
+      <span class="kicker">Bulk Licensing</span>
+      <h2>One license per client family</h2>
+      <p class="lead">Every package delivers instantly: the Legacy Edition workbook files, the Director's Program Guide, customer instruction inserts, and the Certificate of Completion.</p>
+    </div>
+    <div class="pr-grid">
+      <div class="pr-card">
+        <h3>Starter</h3>
+        <div class="size">25 family licenses</div>
+        <div class="price">$499</div>
+        <div class="per">about $20 per family</div>
+        <p>Pilot the program with your pre-need counselors this quarter.</p>
+        <a class="btn btn-ghost" href="https://buy.stripe.com/5kQ28tcscad00o24HRcZa0g">Get Started</a>
+      </div>
+      <div class="pr-card feature">
+        <h3>Professional</h3>
+        <div class="size">100 family licenses</div>
+        <div class="price">$1,499</div>
+        <div class="per">about $15 per family</div>
+        <p>The right size for an active pre-need program.</p>
+        <a class="btn btn-gold" href="https://buy.stripe.com/9B67sNbo82Kyb2G4HRcZa0h">Get Started</a>
+      </div>
+      <div class="pr-card">
+        <h3>Premier</h3>
+        <div class="size">250 family licenses</div>
+        <div class="price">$2,999</div>
+        <div class="per">about $12 per family</div>
+        <p>For multi-location firms and high-volume pre-need teams.</p>
+        <a class="btn btn-ghost" href="https://buy.stripe.com/fZufZj77S84S0o27U3cZa0i">Get Started</a>
+      </div>
+    </div>
+    <div class="cobrand">
+      <div class="txt">
+        <h3>Co-Branded Edition — $500 one-time</h3>
+        <p>Your firm's name and logo on the workbook cover and the Certificate of Completion. Your brand, on the keepsake their family opens for generations. After checkout, email your logo and we deliver your co-branded files within 5 business days.</p>
+      </div>
+      <a class="btn btn-gold" href="https://buy.stripe.com/5kQbJ33VG5WK0o2fmvcZa0j">Add Co-Branding</a>
+    </div>
+    <p class="pr-note">Questions, or a larger firm with custom needs? Email <a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a> — you'll get a real reply from a real person.</p>
+  </section>
+
+  <section class="kit">
+    <div class="wrap center">
+      <span class="kicker">Take It to Your Partners</span>
+      <h2>The one-page program summary</h2>
+      <p class="lead">A printable overview of the program, the five-step loop, and pricing — perfect for owners, managers, and pre-need teams.</p>
+      <a class="btn btn-navy" href="files/Funeral_Home_Sales_Sheet.pdf" download>Download the Sales Sheet (PDF)</a>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <span class="kicker">Talk to Us</span>
+      <h2>Let's put your firm's name on peace of mind</h2>
+      <p class="lead">Want to talk it through before you start, or discuss printed inventory and co-branding? We'd love to help.</p>
+      <a class="btn btn-gold" href="mailto:michael@hometownministries.com?subject=Infinity%20Map%20Funeral%20Home%20Program">Email Us</a>
+      <p class="email"><a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="f-motto">“Because love plans ahead.”</div>
+  <div>© <span id="yr">2026</span> HomeTown Ministries International · <a href="/">InfinityMap.org</a> · <a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a></div>
+  <div class="f-disclaimer">The Infinity Map is a planning workbook — not a preneed contract, trust, insurance product, will, or legal document. It complements, and does not replace or modify, your firm's regulated pre-need instruments.</div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
