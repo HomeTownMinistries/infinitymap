@@ -104,6 +104,18 @@
   .ed-price{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:#fff;margin-bottom:1rem}
   .ed-price .was{font-family:var(--sans);font-size:.85rem;font-weight:500;color:rgba(255,255,255,.6);text-decoration:line-through;margin-left:.5rem}
   .ed-note{text-align:center;margin:2rem auto 0;color:rgba(255,255,255,.7);font-size:.92rem;max-width:560px}
+  /* Partners */
+  .partners{background:var(--paper);border-bottom:1px solid var(--line)}
+  .partner-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;margin-top:2.6rem;max-width:920px;margin-left:auto;margin-right:auto}
+  .partner-card{display:block;background:var(--navy);color:#fff;border-radius:20px;padding:2.2rem 2rem;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease;position:relative;overflow:hidden}
+  .partner-card::before{content:'';position:absolute;inset:0;background:radial-gradient(420px 240px at 50% -10%,rgba(201,162,39,.18),transparent 70%)}
+  .partner-card:hover{transform:translateY(-5px);box-shadow:0 20px 44px rgba(0,18,42,.35)}
+  .partner-card .p-ico{width:52px;height:52px;border-radius:14px;background:rgba(201,162,39,.16);border:1px solid rgba(201,162,39,.45);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem;position:relative}
+  .partner-card h3{font-family:var(--serif);font-size:1.65rem;font-weight:600;margin-bottom:.5rem;position:relative}
+  .partner-card p{font-size:.93rem;color:rgba(255,255,255,.82);margin-bottom:1.1rem;position:relative}
+  .partner-card .p-price{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;position:relative}
+  .partner-card .p-cta{display:inline-block;font-weight:600;font-size:.95rem;color:#fff;border-bottom:2px solid var(--gold);padding-bottom:.15rem;position:relative}
+
   .how-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
   .how-grid .card a{color:var(--navy);font-weight:600}
   .how-note{max-width:640px;margin:2.2rem auto 0;text-align:center;color:var(--muted);font-size:.95rem}
@@ -171,7 +183,7 @@
     <nav class="links">
       <a href="#inside" class="hide-m">What's Inside</a>
       <a href="#editions" class="hide-m">Editions</a>
-      <a href="churches.html" class="hide-m">For Churches</a>
+      <a href="#partners" class="hide-m">Churches &amp; Funeral Homes</a>
       <a href="#about" class="hide-m">About</a>
       <a href="#editions" class="btn btn-gold">Get Your Copy</a>
     </nav>
@@ -283,6 +295,31 @@
       </div>
     </div>
     <p class="ed-note reveal">Instant delivery — your fillable PDF download is ready the moment checkout completes. Secure payment by Stripe.</p>
+  </section>
+
+  <!-- Partners -->
+  <section class="partners" id="partners">
+    <div class="wrap center reveal">
+      <span class="kicker">Beyond the Individual</span>
+      <h2>Bring the Infinity Map to your organization</h2>
+      <p class="lead">The Map does its deepest work when a whole community walks through it together. Two complete programs, ready to launch this week.</p>
+    </div>
+    <div class="wrap partner-grid">
+      <a class="partner-card reveal" href="churches.html">
+        <div class="p-ico">⛪</div>
+        <h3>For Churches</h3>
+        <p>A complete end-of-life planning workshop: one Infinity Map per household, a Facilitator Guide, and a 5- or 8-week curriculum with prayers, scripture, and discussion prompts.</p>
+        <div class="p-price">Packages from $299</div>
+        <span class="p-cta">Explore the Church Workshop →</span>
+      </a>
+      <a class="partner-card reveal" href="funeral-homes.html">
+        <div class="p-ico">🕊️</div>
+        <h3>For Funeral Homes</h3>
+        <p>The Pre-Need Completion Program: gift the Map with every pre-need arrangement, receive vital information and service wishes for your files, and present a certificate families remember.</p>
+        <div class="p-price">Bulk licensing from $499</div>
+        <span class="p-cta">Explore the Pre-Need Program →</span>
+      </a>
+    </div>
   </section>
 
   <!-- How to fill it in -->
