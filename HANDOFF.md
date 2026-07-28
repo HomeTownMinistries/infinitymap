@@ -42,7 +42,7 @@ A 100%-off promo code exists for the pastor preview program (10 redemptions max,
 
 ## Programs in flight
 
-1. **Pastor preview program** — free Small Church package via PASTORPREVIEW in exchange for feedback at /pastor-feedback.html. Outreach emails were drafted in Michael's Gmail to: four pastors (drafts with names/addresses are in Michael's Gmail Drafts; one is a personal friend asked to pilot with a small group of ~10 — contact details deliberately omitted from this public repo). Watch for form submissions (Netlify → Forms) and fold feedback into materials; "may we quote you = yes" responses feed a future testimonials section.
+1. **Pastor preview program** — free Small Church package via the preview promo code (see Stripe) in exchange for feedback at /pastor-feedback.html. Outreach emails were drafted in Michael's Gmail to: four pastors (drafts with names/addresses are in Michael's Gmail Drafts; one is a personal friend asked to pilot with a small group of ~10 — contact details deliberately omitted from this public repo). Watch for form submissions (Netlify → Forms) and fold feedback into materials; "may we quote you = yes" responses feed a future testimonials section.
 2. **Funeral home outreach** — sales sheet at files/Funeral_Home_Sales_Sheet.pdf; email template exists in prior conversation; no prospects contacted yet.
 
 ## Known to-dos / open items
