@@ -27,7 +27,7 @@ Brand: navy `#00122A`, gold `#C9A227`, cream `#FAF7F2`, red heart accent; serif 
 Live payment links on the site (each redirects to its delivery page):
 - Essentials $29.99 → https://buy.stripe.com/9B614peAk70OdaO5LVcZa0d → download-essentials.html
 - Legacy $59.99 → https://buy.stripe.com/fZu14pgIs0Cq9YC2zJcZa0f → download-legacy.html
-- Church Small $299 → https://buy.stripe.com/4gM6oJ1Ny5WK1s6b6fcZa05 (promo codes ENABLED — see PASTORPREVIEW)
+- Church Small $299 → https://buy.stripe.com/4gM6oJ1Ny5WK1s6b6fcZa05 (promo codes ENABLED for the pastor preview program)
 - Church Medium $499 → https://buy.stripe.com/aFaeVf9g084S7Qu1vFcZa06
 - Church Large $799.99 → https://buy.stripe.com/dRmeVf77S5WK2wab6fcZa08
 - Church Mega $999 → https://buy.stripe.com/4gM14pak42Ky0o24HRcZa07
@@ -38,11 +38,11 @@ Live payment links on the site (each redirects to its delivery page):
 - FH Co-Brand $500 → https://buy.stripe.com/5kQbJ33VG5WK0o2fmvcZa0j
   (funeral links redirect to download-funeral.html)
 
-Promo code **PASTORPREVIEW**: 100% off the Small Church product, max 10 redemptions, for the pastor preview program. Old/stale links (Essentials $14.99, both Legacy $29.99 links) were DEACTIVATED — do not reactivate.
+A 100%-off promo code exists for the pastor preview program (10 redemptions max, applies to the Small Church product) — the code itself is in Stripe (Products > Coupons) and in Michael's email drafts; it is deliberately not written here because this repo is public. Old/stale links (Essentials $14.99, both Legacy $29.99 links) were DEACTIVATED — do not reactivate.
 
 ## Programs in flight
 
-1. **Pastor preview program** — free Small Church package via PASTORPREVIEW in exchange for feedback at /pastor-feedback.html. Outreach emails were drafted in Michael's Gmail to: Pastor David Shipman (PastorDavid@copichurch.org), Pastor David Moore (Rojo7man@yahoo.com), Pastor Johnny Johnson (vlhastings12@yahoo.com), and Pastor Anthony Wade (pastoranthony@buildyourfaith.org — personal friend; asked to pilot with a small group of ~10). Watch for form submissions (Netlify → Forms) and fold feedback into materials; "may we quote you = yes" responses feed a future testimonials section.
+1. **Pastor preview program** — free Small Church package via PASTORPREVIEW in exchange for feedback at /pastor-feedback.html. Outreach emails were drafted in Michael's Gmail to: four pastors (drafts with names/addresses are in Michael's Gmail Drafts; one is a personal friend asked to pilot with a small group of ~10 — contact details deliberately omitted from this public repo). Watch for form submissions (Netlify → Forms) and fold feedback into materials; "may we quote you = yes" responses feed a future testimonials section.
 2. **Funeral home outreach** — sales sheet at files/Funeral_Home_Sales_Sheet.pdf; email template exists in prior conversation; no prospects contacted yet.
 
 ## Known to-dos / open items
