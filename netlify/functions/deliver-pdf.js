@@ -14,7 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 const Stripe = require('stripe');
-const { PDFDocument } = require('pdf-lib');
+const { PDFDocument, TextAlignment } = require('pdf-lib');
 
 const PRODUCTS = {
   essentials: {
@@ -109,6 +109,7 @@ exports.handler = async (event) => {
   try {
     const form = pdfDoc.getForm();
     const field = form.getTextField('prepared_for_name');
+    field.setAlignment(TextAlignment.Center);
     if (buyerName) field.setText(buyerName);
   } catch (err) {
     console.warn('Could not fill prepared_for_name field:', err.message);
