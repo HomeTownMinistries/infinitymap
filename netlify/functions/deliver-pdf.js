@@ -62,9 +62,15 @@ exports.handler = async (event) => {
     };
   }
 
-  const stripeKey = process.env.STRIPE_SECRET_KEY;
+  // Stripe test-mode session IDs are always prefixed cs_test_ (live ones
+  // cs_live_), and a key from one mode can never read a session from the
+  // other -- so pick the matching key rather than assuming production.
+  // This lets a Stripe test-mode purchase (card 4242 4242 4242 4242) be
+  // used to verify this whole flow without ever touching real payments.
+  const isTestSession = sessionId.startsWith('cs_test_');
+  const stripeKey = isTestSession ? process.env.STRIPE_SECRET_KEY_TEST : process.env.STRIPE_SECRET_KEY;
   if (!stripeKey) {
-    console.error('STRIPE_SECRET_KEY is not configured.');
+    console.error(`${isTestSession ? 'STRIPE_SECRET_KEY_TEST' : 'STRIPE_SECRET_KEY'} is not configured.`);
     return { statusCode: 500, body: 'Delivery is temporarily unavailable. Please email michael@hometownministries.com.' };
   }
   const stripe = new Stripe(stripeKey);

@@ -47,17 +47,18 @@ Every buyer used to get the exact same static file from `files/`. To make casual
 - fills the cover's existing "Prepared For" field with the buyer's name from their Stripe Checkout session, and
 - stamps the buyer's email + Stripe session ID into the PDF's (invisible) document metadata, so a forwarded copy is traceable back to a specific purchase.
 
-**Required setup (not yet done — do this before relying on it):**
-1. In the Netlify site's environment variables, add `STRIPE_SECRET_KEY` (a restricted key with Checkout Sessions read access is enough).
-2. Optional but recommended: add `STRIPE_PRICE_ESSENTIALS` and `STRIPE_PRICE_LEGACY` (the Price IDs, from Stripe → Products) so the function can reject a paid-for-Essentials session_id being reused to fetch the Legacy file. Without these set, that specific cross-product check is skipped (everything else — payment_status must be `paid`, session must exist — still applies).
-3. In Stripe, edit each of the two individual Payment Links' "After payment" confirmation page to redirect to:
-   - Essentials: `https://infinitymap.org/download-essentials.html?session_id={CHECKOUT_SESSION_ID}`
-   - Legacy: `https://infinitymap.org/download-legacy.html?session_id={CHECKOUT_SESSION_ID}`
-   (Stripe substitutes `{CHECKOUT_SESSION_ID}` automatically — it's a literal placeholder you type into the URL field.)
+**Setup status: done and live as of Jul 28, 2026.**
+1. `STRIPE_SECRET_KEY` — a restricted key (Checkout Sessions: Read only) — is set as a Netlify env var, scoped to Builds/Functions/Runtime, for both Production and Deploy Previews.
+2. `STRIPE_PRICE_ESSENTIALS` / `STRIPE_PRICE_LEGACY` (the Price IDs) are **not yet set** — optional hardening, still safe to skip. Without them the cross-product mismatch check (rejects a paid-for-Essentials session_id being reused to fetch Legacy) is silently skipped; everything else still applies.
+3. Both individual Payment Links' "After payment" redirect are configured with `?session_id={CHECKOUT_SESSION_ID}`:
+   - Essentials: same link as before (`9B614peAk70OdaO5LVcZa0d`), edited in place.
+   - Legacy: a **new** link (`bJecN71Ny2Ky0o2a2bcZa0k`) — the original was API-created and couldn't be edited in the dashboard; see the Stripe section above.
 
 If `session_id` is missing or invalid for any reason (old bookmark, Stripe hiccup, misconfigured env var), the download pages fall back to the plain static file rather than blocking a paying customer — personalization is a nice-to-have, not a gate.
 
-Church and funeral-home bulk purchases (`download-church.html`, `download-funeral.html`) were intentionally left on static delivery — not part of this change.
+Church and funeral-home bulk purchases (`download-church.html`, `download-funeral.html`) were intentionally left on static delivery — not part of this change. (Discussed extending "Prepared for X on behalf of Y" to their support docs; parked, not built.)
+
+**Testing without spending real money:** the function picks its Stripe key by session ID prefix — `cs_test_...` uses `STRIPE_SECRET_KEY_TEST`, `cs_live_...` uses `STRIPE_SECRET_KEY`. To verify the flow end-to-end, add `STRIPE_SECRET_KEY_TEST` (a restricted key created while the Stripe dashboard is toggled to **Test mode**) as a Netlify env var, create a test-mode Payment Link with the same `?session_id={CHECKOUT_SESSION_ID}` redirect, and pay with Stripe's test card `4242 4242 4242 4242`. This never touches live data or real money.
 
 ## Programs in flight
 
