@@ -25,8 +25,9 @@ Brand: navy `#00122A`, gold `#C9A227`, cream `#FAF7F2`, red heart accent; serif 
 ## Stripe (account: Hometownministries, acct_1Oo6IQRrM8M4C8U3)
 
 Live payment links on the site (each redirects to its delivery page):
-- Essentials $29.99 → https://buy.stripe.com/9B614peAk70OdaO5LVcZa0d → download-essentials.html
-- Legacy $59.99 → https://buy.stripe.com/fZu14pgIs0Cq9YC2zJcZa0f → download-legacy.html
+- Essentials $29.99 → https://buy.stripe.com/9B614peAk70OdaO5LVcZa0d → download-essentials.html?session_id={CHECKOUT_SESSION_ID}
+- Legacy $59.99 → https://buy.stripe.com/bJecN71Ny2Ky0o2a2bcZa0k → download-legacy.html?session_id={CHECKOUT_SESSION_ID}
+  (the original Legacy link, https://buy.stripe.com/fZu14pgIs0Cq9YC2zJcZa0f, was created via the Payment Links API and couldn't be edited in the dashboard to add the session_id redirect param — it was duplicated into this new dashboard-editable link on Jul 28, 2026 and should be deactivated once the new one is confirmed working. Do not reuse the old URL.)
 - Church Small $299 → https://buy.stripe.com/4gM6oJ1Ny5WK1s6b6fcZa05 (promo codes ENABLED for the pastor preview program)
 - Church Medium $499 → https://buy.stripe.com/aFaeVf9g084S7Qu1vFcZa06
 - Church Large $799.99 → https://buy.stripe.com/dRmeVf77S5WK2wab6fcZa08
