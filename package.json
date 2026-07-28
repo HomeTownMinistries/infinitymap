@@ -1,0 +1,9 @@
+{
+  "name": "infinitymap-site",
+  "private": true,
+  "description": "InfinityMap.org static site + Netlify Functions (personalized PDF delivery).",
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "stripe": "^17.5.0"
+  }
+}

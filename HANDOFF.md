@@ -40,6 +40,24 @@ Live payment links on the site (each redirects to its delivery page):
 
 A 100%-off promo code exists for the pastor preview program (10 redemptions max, applies to the Small Church product) — the code itself is in Stripe (Products > Coupons) and in Michael's email drafts; it is deliberately not written here because this repo is public. Old/stale links (Essentials $14.99, both Legacy $29.99 links) were DEACTIVATED — do not reactivate.
 
+## Personalized PDF delivery (Essentials + Legacy individual buyers)
+
+Every buyer used to get the exact same static file from `files/`. To make casual reproduction/reselling of individually-purchased copies harder (bulk church/funeral-home buyers already have a license agreement and an ongoing relationship — this only targets the two-anyone-can-buy-online editions), downloads for Essentials and Legacy now go through a Netlify Function (`netlify/functions/deliver-pdf.js`) that:
+- fills the cover's existing "Prepared For" field with the buyer's name from their Stripe Checkout session, and
+- stamps the buyer's email + Stripe session ID into the PDF's (invisible) document metadata, so a forwarded copy is traceable back to a specific purchase.
+
+**Required setup (not yet done — do this before relying on it):**
+1. In the Netlify site's environment variables, add `STRIPE_SECRET_KEY` (a restricted key with Checkout Sessions read access is enough).
+2. Optional but recommended: add `STRIPE_PRICE_ESSENTIALS` and `STRIPE_PRICE_LEGACY` (the Price IDs, from Stripe → Products) so the function can reject a paid-for-Essentials session_id being reused to fetch the Legacy file. Without these set, that specific cross-product check is skipped (everything else — payment_status must be `paid`, session must exist — still applies).
+3. In Stripe, edit each of the two individual Payment Links' "After payment" confirmation page to redirect to:
+   - Essentials: `https://infinitymap.org/download-essentials.html?session_id={CHECKOUT_SESSION_ID}`
+   - Legacy: `https://infinitymap.org/download-legacy.html?session_id={CHECKOUT_SESSION_ID}`
+   (Stripe substitutes `{CHECKOUT_SESSION_ID}` automatically — it's a literal placeholder you type into the URL field.)
+
+If `session_id` is missing or invalid for any reason (old bookmark, Stripe hiccup, misconfigured env var), the download pages fall back to the plain static file rather than blocking a paying customer — personalization is a nice-to-have, not a gate.
+
+Church and funeral-home bulk purchases (`download-church.html`, `download-funeral.html`) were intentionally left on static delivery — not part of this change.
+
 ## Programs in flight
 
 1. **Pastor preview program** — free Small Church package via the preview promo code (see Stripe) in exchange for feedback at /pastor-feedback.html. Outreach emails were drafted in Michael's Gmail to: four pastors (drafts with names/addresses are in Michael's Gmail Drafts; one is a personal friend asked to pilot with a small group of ~10 — contact details deliberately omitted from this public repo). Watch for form submissions (Netlify → Forms) and fold feedback into materials; "may we quote you = yes" responses feed a future testimonials section.
@@ -47,6 +65,7 @@ A 100%-off promo code exists for the pastor preview program (10 redemptions max,
 
 ## Known to-dos / open items
 
+- **Personalized PDF delivery needs its Stripe setup finished** (see section above): add `STRIPE_SECRET_KEY` as a Netlify env var, and update the Essentials/Legacy Payment Links' after-payment redirect to include `?session_id={CHECKOUT_SESSION_ID}`. Until both are done, buyers silently get the plain static file (no personalization, but downloads still work).
 - **Netlify form notifications**: Michael must toggle email notifications in Netlify → Forms (forms: `free-guide`, `pastor-feedback`) so submissions reach his inbox. ~30 seconds, UI-only.
 - **Amazon KDP printed edition** — next big product move; waiting on Michael creating a KDP account and choosing trim size/binding. Then prepare print-ready interior (form fields → write-in lines) and wraparound cover.
 - **Google Drive copies of the workbooks are OUTDATED** (pre-font-fix). The site uses the fixed versions in `files/`. Optionally update Drive.
