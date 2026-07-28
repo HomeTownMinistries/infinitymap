@@ -19,10 +19,12 @@
   h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.15}
   .tag{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.2rem;margin:.7rem 0 1.2rem}
   p{color:rgba(255,255,255,.85);margin-bottom:1rem}
-  .btn{display:inline-block;margin:1.4rem 0 .6rem;padding:1rem 2.4rem;border-radius:999px;background:var(--gold);color:var(--navy);font-weight:700;font-size:1.05rem;text-decoration:none;box-shadow:0 6px 20px rgba(201,162,39,.4);transition:transform .15s}
+  .btn{display:inline-block;margin:1.4rem 0 .6rem;padding:1rem 2.4rem;border-radius:999px;background:var(--gold);color:var(--navy);font-weight:700;font-size:1.05rem;text-decoration:none;box-shadow:0 6px 20px rgba(201,162,39,.4);transition:transform .15s;border:none;cursor:pointer;font-family:inherit}
   .btn:hover{transform:translateY(-2px)}
+  .btn:disabled{opacity:.6;cursor:default;transform:none}
   .small{font-size:.9rem;color:rgba(255,255,255,.65)}
   .small a{color:var(--gold)}
+  .error{display:none;color:#ffb4b4;font-size:.9rem;margin-top:.8rem}
   .home{display:inline-block;margin-top:2rem;color:rgba(255,255,255,.7);font-size:.9rem;text-decoration:none}
   .home:hover{color:#fff}
   .howto{margin-top:2.6rem;text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:1.6rem 1.8rem}
@@ -39,7 +41,8 @@
     <h1>Thank you — your Infinity Map is ready</h1>
     <p class="tag">Legacy Edition · “Because love plans ahead.”</p>
     <p>Your purchase is complete. Download your complete life &amp; legacy planner below, then save it somewhere safe. You can fill it in on your computer, or print it and complete it by hand.</p>
-    <a class="btn" href="files/Infinity_Map_Legacy.pdf" download>Download the Legacy Edition (PDF)</a>
+    <button class="btn" id="downloadBtn" type="button">Download the Legacy Edition (PDF)</button>
+    <p class="error" id="downloadError">We couldn't verify your purchase automatically. Please email <a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a> and we'll send it to you directly.</p>
     <p class="small">Trouble downloading? Email <a href="mailto:michael@hometownministries.com">michael@hometownministries.com</a> and we'll send it to you directly.</p>
     <div class="howto">
       <h2>How to fill it in</h2>
@@ -52,5 +55,53 @@
     </div>
     <a class="home" href="/">← Back to InfinityMap.org</a>
   </div>
+  <script>
+    (function () {
+      var sessionId = new URLSearchParams(window.location.search).get('session_id');
+      var btn = document.getElementById('downloadBtn');
+      var errorEl = document.getElementById('downloadError');
+
+      function fallbackToStaticFile() {
+        errorEl.style.display = 'block';
+        btn.textContent = 'Download the Legacy Edition (PDF)';
+        btn.onclick = function () {
+          window.location.href = 'files/Infinity_Map_Legacy.pdf';
+        };
+      }
+
+      if (!sessionId) {
+        // No session on the URL (e.g. an old bookmark) -- fall back to the
+        // plain static file rather than blocking the download entirely.
+        fallbackToStaticFile();
+        return;
+      }
+
+      btn.onclick = function () {
+        btn.disabled = true;
+        errorEl.style.display = 'none';
+        btn.textContent = 'Preparing your download…';
+        var url = '/.netlify/functions/deliver-pdf?product=legacy&session_id=' + encodeURIComponent(sessionId);
+        fetch(url)
+          .then(function (res) {
+            if (!res.ok) throw new Error('delivery failed');
+            return res.blob();
+          })
+          .then(function (blob) {
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Infinity_Map_Legacy.pdf';
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            btn.disabled = false;
+            btn.textContent = 'Download the Legacy Edition (PDF)';
+          })
+          .catch(function () {
+            btn.disabled = false;
+            fallbackToStaticFile();
+          });
+      };
+    })();
+  </script>
 </body>
 </html>
